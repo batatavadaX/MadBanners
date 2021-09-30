@@ -20,17 +20,17 @@ m = Client("m", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 async def save_logo(Client, message: Message):
   if message.reply_to_message.photo or message.reply_to_message.document:
     k=await Client.download_media(message=message.reply_to_message, file_name="banner/logo.png")
-    b=f"Downloaded {k}"
+    b=f"logo download thi gayo {k}"
     await message.reply(b)
     
 @m.on_message(filters.command("setwinners", prefixes="/"))
 async def set_winners(Client, message: Message):
   if message.reply_to_message.text:
     k = message.reply_to_message.text.split("\n")
-    with open("banner/winners.txt", "wb") as f:
+    with open("banner/winners.txt", "w") as f:
       for item in k:
         f.write(item + "\n")
-
+  await message.reply("Winners Set Kari didha ")
 @m.on_message(filters.command("makebanner", prefixes="/"))
 async def make_banner(clayy: Client, message: Message):
   crop_logo()
