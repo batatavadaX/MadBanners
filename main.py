@@ -19,7 +19,7 @@ m = Client("m", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 @m.on_message(filters.command("savelogo", prefixes="/"))
 async def save_logo(Client, message: Message):
   if message.reply_to_message.photo or message.reply_to_message.document:
-    k=await message.client.download_media(message=reply_message, file_name="banner/logo.png")
+    k=await Client.download_media(message=message.reply_to_message, file_name="banner/logo.png")
     b=f"Downloaded {k}"
     await message.reply(message.chat_id, b)
     
