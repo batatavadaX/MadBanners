@@ -1,6 +1,9 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
+import os
+
+
 from crop import crop_logo
 from sticker import stick_logo
 from text import write_text
