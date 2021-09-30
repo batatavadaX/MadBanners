@@ -5,9 +5,9 @@ def write_text():
     image=Image.open('banner/banner.png')
     draw = ImageDraw.Draw(image)
     font = ImageFont.truetype('fonts/Roboto-Regular.ttf', size=45)
-    k = message.reply_to_message.text.split("\n")
-    m = k[0]
-
+    m = open("banner/winners.txt", "r")
+    k = m.readlines()
+ 
     #1
     (x, y) = (210,270)
     m = k[0]
