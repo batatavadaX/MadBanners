@@ -28,7 +28,8 @@ async def set_winners(Client, message: Message):
   if message.reply_to_message.text:
     k = message.reply_to_message.text.split("\n")
     with open("banner/winners.txt", "wb") as f:
-      f.write(k)
+      for item in k:
+        f.write(item + "\n")
 
 @m.on_message(filters.command("makebanner", prefixes="/"))
 async def make_banner(clayy: Client, message: Message):
