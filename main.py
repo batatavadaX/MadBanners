@@ -34,3 +34,4 @@ async def make_banner(clayy: Client, message: Message):
   write_text()
   await clayy.send_photo(message.chat_id, "banner/banner.png")
   
+m.run()
