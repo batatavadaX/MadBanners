@@ -62,7 +62,7 @@ async def download_file(Client, query: CallbackQuery):
    keyboard = ([[KeyboardButton("done")], [KeyboardButton("/makebanner")]])
    
    await query.message.reply_text("winner na naam mokal", reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True, one_time_keyboard=True))
-   if message.reply_to_message.text:
+   if query.message.reply_to_message.text:
      await query.message.reply_text(message.reply_to_message.text)
    
 # @m.on_message(filters.text & filters.private & filters.regex(r"^done"))
