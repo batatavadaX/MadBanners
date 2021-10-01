@@ -59,7 +59,7 @@ async def download_file(Client, query: CallbackQuery):
     await query.message.edit_text(text="Je logo set karavo hoy a mokalane ne")
   elif query.data == "winners":
    keyboard = ([[KeyboardButton("winner nu naam enter karo")]])
-   await query.message.reply_text("test", reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True, one_time_keyboard=TruE))    
+   await query.message.reply_text("test", reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True, one_time_keyboard=True))    
    
    
    
