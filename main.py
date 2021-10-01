@@ -33,11 +33,6 @@ async def auto_logo(Client, message):
       [InlineKeyboardButton(text="nathi karavu", callback_data="cl_ose")]
     ])
   )
-  else:
-    await message.reply_text(
-      "photo mokal ne",
-      quote=True
-    )
   
 @m.on_message(filters.command("setwinners", prefixes="/"))
 async def set_winners(Client, message: Message):
