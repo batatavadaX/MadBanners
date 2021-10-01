@@ -50,7 +50,7 @@ async def download_file(Client, query: CallbackQuery):
     b=f"logo download thi gayo {k}"
     await query.message.edit_text(text="download thai gyu")
   elif query.data == "cl_ose":
-    await query.message.delete()
+    await query.message.edit_text(text="Je logo set karavo hoy a mokalane ne")
     
     
 m.run()
