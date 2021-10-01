@@ -3,6 +3,7 @@ from pyrogram.types import Message
 
 import os
 
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from crop import crop_logo
 from sticker import stick_logo
