@@ -66,7 +66,7 @@ async def download_file(Client, query: CallbackQuery):
    
 @m.on_message(filters.text & filters.private & filters.regex(r"^done"))
 async def set_winnders(Client, message: Message):
-  m = await app.get_history(message.chat.id, limit=1)
+  m = await Client.get_history(limit=1)
   await message.reply(m[0].text)
 
 
