@@ -70,9 +70,14 @@ async def set_winnders(Client, message: Message):
     with open("banner/winners.txt", "w") as f:
       for item in k:
         f.write(item + "\n")
-  await message.reply("Winners Set Kari didha ")
+  await message.reply("Winners Set Kari didha")
 
+@m.on_message(filters.regex(r"^Winners Set Kari didha"))
+async def set_winnrs(Client, query: CallbackQuery):
+ keyboard = ([[KeyboardButton("/makebanner")]])
+ await query.message.reply_text("chalo banner banaiye", reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True, one_time_keyboard=True))
+ 
+ 
 
-              
     
 m.run()
