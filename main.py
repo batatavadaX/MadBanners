@@ -1,8 +1,8 @@
 from pyrogram import Client, filters
 
 import os
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, Message
-
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, Message, ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
+ 
 from crop import crop_logo
 from sticker import stick_logo
 from text import write_text
@@ -47,10 +47,25 @@ async def make_banner(clayy: Client, message: Message):
 async def download_file(Client, query: CallbackQuery):
   if query.data == "download_file":
     k=await Client.download_media(message=query.message.reply_to_message, file_name="banner/logo.png")
-    b=f"logo download thi gayo {k}"
     await query.message.edit_text(text="download thai gyu")
+    await query.message.reply_text(
+    "Winner Set Karo",
+    quote=True,
+    reply_markup=InlineKeyboardMarkup([
+      [InlineKeyboardButton(text="haa", callback_data="winners")],
+    ])
+  )
   elif query.data == "cl_ose":
     await query.message.edit_text(text="Je logo set karavo hoy a mokalane ne")
-    
+  elif query.data == "winners":
+    await query.message.edit_text(text="winner na naam reply kar")
+    if query.message.reply_to_message.text:
+      k = query.message.reply_to_message.text.split("\n")
+      with open("banner/winners.txt", "w") as f:
+        for item in k:
+          f.write(item + "\n")
+    await query.message.reply("Winners Set Kari didha ")
+
+
     
 m.run()
