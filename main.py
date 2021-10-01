@@ -58,13 +58,26 @@ async def download_file(Client, query: CallbackQuery):
   elif query.data == "cl_ose":
     await query.message.edit_text(text="Je logo set karavo hoy a mokalane ne")
   elif query.data == "winners":
-    await query.message.edit_text(text="winner na naam reply kar")
-    if query.message.reply_to_message.text:
-      k = query.message.reply_to_message.text.split("\n")
-      with open("banner/winners.txt", "w") as f:
-        for item in k:
-          f.write(item + "\n")
-    await query.message.reply("Winners Set Kari didha ")
+   keyboard = ([[KeyboardButton("winner nu naam enter karo")]])
+   await message.reply_text(
+    "test",
+    reply_markup=ReplyKeyboardMarkup(
+        keyboard,
+        resize_keyboard=True,
+        one_time_keyboard=True
+    )
+    
+)
+   
+   
+   
+   
+   
+   
+      # with open("banner/winners.txt", "w") as f:
+        # for item in k:
+        # f.write(item + "\n")
+   # await query.message.reply("Winners Set Kari didha ")
 
 
     
