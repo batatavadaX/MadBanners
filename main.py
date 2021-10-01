@@ -39,8 +39,6 @@ async def auto_logo(Client, message):
       "photo mokal ne",
       quote=True
     )
-© 2021 GitHub, Inc.
-T
   
 @m.on_message(filters.command("setwinners", prefixes="/"))
 async def set_winners(Client, message: Message):
