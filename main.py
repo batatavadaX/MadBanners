@@ -1,9 +1,7 @@
 from pyrogram import Client, filters
-from pyrogram.types import Message
 
 import os
-
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, Message
 
 from crop import crop_logo
 from sticker import stick_logo
