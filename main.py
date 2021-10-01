@@ -45,9 +45,9 @@ async def make_banner(clayy: Client, message: Message):
   write_text()
   await clayy.send_photo(message.chat.id, "banner/banner.png")
 
-  
-async def download_file(Client, message: Message):
-  if message.reply_to_message.photo or message.reply_to_message.document:
+@m.on_callback_query()
+async def download_file(Client, message: Message, query: CallbackQuery):
+  if query.data == "download_file"
     k=await Client.download_media(message=message.reply_to_message, file_name="banner/logo.png")
     b=f"logo download thi gayo {k}"
     await message.reply(b)
