@@ -48,7 +48,7 @@ async def download_file(Client, message: Message, query: CallbackQuery):
 
   if query.data == "download_file":
     k=await Client.download_media(message=message.reply_to_message, file_name="banner/logo.png")
-    b=f"logo download thi gayo {k}".
+    b=f"logo download thi gayo {k}"
     await query.message.edit_text(text="download thai gyu")
     
 m.run()
