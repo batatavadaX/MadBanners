@@ -25,15 +25,14 @@ async def save_logo(Client, message: Message):
     
 @m.on_message(filters.private & (filters.document | filters.photo))
 async def auto_logo(Client, message):
-  if message.reply_to_message.photo or message.reply_to_message.document:
-    await message.reply_text(
-      "Save karaso ke nai ?",
-      quote=True,
-      reply_markup=InlineKeyboardMarkup([
-        [InlineKeyboardButton(text="haa", callback_data="download_file")],
-        [InlineKeyboardButton(text="nathi karavu", callback_data="cl_ose")]
-      ])
-    )
+  await message.reply_text(
+    "Save karaso ke nai ?",
+    quote=True,
+    reply_markup=InlineKeyboardMarkup([
+      [InlineKeyboardButton(text="haa", callback_data="download_file")],
+      [InlineKeyboardButton(text="nathi karavu", callback_data="cl_ose")]
+    ])
+  )
   else:
     await message.reply_text(
       "photo mokal ne",
