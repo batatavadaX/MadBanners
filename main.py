@@ -63,7 +63,7 @@ async def download_file(Client, query: CallbackQuery):
    await query.message.reply_text("winner na naam mokal", reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True, one_time_keyboard=True))    
    
    
-@m.on_message(Filters.regex(r"^done"))
+@m.on_message(filters.regex(r"^done"))
 async def set_winnders(Client, message: Message):
   if message.reply_to_message.text:
     k = message.reply_to_message.text.split("\n")
