@@ -62,17 +62,15 @@ async def download_file(Client, query: CallbackQuery):
    keyboard = ([[KeyboardButton("done")], [KeyboardButton("/makebanner")]])
    
    await query.message.reply_text("winner na naam mokal", reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True, one_time_keyboard=True))
-   if query.message.reply_to_message.text:
-     await query.message.reply_text(query.message.reply_to_message.text)
    
 @m.on_message(filters.text & filters.private & filters.regex(r"^winnners"))
-async def set_winers(Client, message: Message):
+async def set_winhners(Client, message: Message):
   if message.reply_to_message.text:
     k = message.reply_to_message.text.split("\n")
     with open("banner/winners.txt", "w") as f:
       for item in k:
         f.write(item + "\n")
-
+  await message.reply("Winners Set Kari didha ")
 
 
  
