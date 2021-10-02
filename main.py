@@ -65,11 +65,11 @@ async def download_file(Client, query: CallbackQuery):
    
 @m.on_message(filters.text & filters.regex(r"^winnners"))
 async def set_winhners(Client, message: Message):
-  if message.text:
-    k = message.text.split("\n")
-    with open("banner/winners.txt", "w") as f:
-      for item in k:
-        f.write(item + "\n")
+  #if message.text:
+    #k = message.text.split("\n")
+    #with open("banner/winners.txt", "w") as f:
+      #for item in k:
+        #f.write(item + "\n")
   await message.reply("Winners Set Kari didha ")
 
 
