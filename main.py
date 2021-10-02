@@ -52,16 +52,19 @@ async def download_file(Client, query: CallbackQuery):
     "Winner Set Karo",
     quote=True,
     reply_markup=InlineKeyboardMarkup([
-      [InlineKeyboardButton(text="haa", callback_data="winners")],
+      [InlineKeyboardButton(text="haa", callback_data="win")],
     ])
   )
   elif query.data == "cl_ose":
     await query.message.edit_text(text="Je logo set karavo hoy a mokalane ne")
-  elif query.data == "winners":
+  elif query.data == "win":
    await query.message.edit_text(text="Okay")
-   keyboard = ([[KeyboardButton("done")], [KeyboardButton("/makebanner")]])
    
+   keyboard = ([[KeyboardButton("/makebanner")]])
    await query.message.reply_text("winner na naam mokal", reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True, one_time_keyboard=True))
+  elif query.data == "winners":
+   await query.message.edit_text(text="fun")
+   
    
 @m.on_message(filters.text & filters.regex(r"^winnners"))
 async def set_winhners(Client, message: Message):
