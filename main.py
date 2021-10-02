@@ -65,7 +65,7 @@ async def download_file(Client, query: CallbackQuery):
    await query.message.edit_text(text="fun")
    
    
-@m.on_message(filters.text & filters.regex(r"^winnners"))
+@m.on_message(filters.text & filters.regex(r"^winnners$"))
 async def set_winhners(Client, message: Message):
  k = message.text.split("\n")
  with open("banner/winners.txt", "w") as f:
