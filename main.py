@@ -36,6 +36,7 @@ async def set_winners(Client, message: Message):
       for item in k:
         f.write(item + "\n")
   await message.reply("Winners Set Kari didha ")
+  
 @m.on_message(filters.command("makebanner", prefixes="/"))
 async def make_banner(clayy: Client, message: Message):
   crop_logo()
@@ -58,8 +59,6 @@ async def download_file(Client, query: CallbackQuery):
   elif query.data == "cl_ose":
     await query.message.edit_text(text="Je logo set karavo hoy a mokalane ne")
   elif query.data == "win":
-   await query.message.edit_text(text="Okay")
-   
    keyboard = ([[KeyboardButton("/makebanner")]])
    await query.message.reply_text("winner na naam mokal", reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True, one_time_keyboard=True))
   elif query.data == "winners":
@@ -68,12 +67,11 @@ async def download_file(Client, query: CallbackQuery):
    
 @m.on_message(filters.text & filters.regex(r"^winnners"))
 async def set_winhners(Client, message: Message):
-  #if message.text:
-    #k = message.text.split("\n")
-    #with open("banner/winners.txt", "w") as f:
-      #for item in k:
-        #f.write(item + "\n")
-  await message.reply("Winners Set Kari didha ")
+ k = message.text.split("\n")
+ with open("banner/winners.txt", "w") as f:
+  for item in k:
+   f.write(item + "\n")
+ await message.reply("Winners Set Kari didha ")
 
 
  
