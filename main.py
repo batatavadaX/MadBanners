@@ -59,10 +59,9 @@ async def download_file(Client, query: CallbackQuery):
   elif query.data == "cl_ose":
     await query.message.edit_text(text="Je logo set karavo hoy a mokalane ne")
   elif query.data == "win":
+   await query.message.edit_text(text="okay have tu ek kaam kar")
    keyboard = ([[KeyboardButton("/makebanner")]])
    await query.message.reply_text("winner na naam mokal", reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True, one_time_keyboard=True))
-  elif query.data == "winners":
-   await query.message.edit_text(text="fun")
    
    
 @m.on_message(filters.text & filters.regex("#"))
