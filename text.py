@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 def write_text():
     image=Image.open('banner/banner.png')
     draw = ImageDraw.Draw(image)
-    font = ImageFont.truetype('fonts/BebasNeue-Regular', size=45)
+    font = ImageFont.truetype('fonts/BebasNeue-Regular.ttf', size=45)
     m = open("banner/winners.txt", "r")
     k = m.readlines()
  
