@@ -57,7 +57,7 @@ async def download_file(Client, query: CallbackQuery):
     ])
   )
   elif query.data == "cl_ose":
-    await query.message.edit_text(text="Je logo set karavo hoy a mokalane ne")
+    await query.message.edit_text(text="Je logo set karavo hoy a mokalane ne to")
   elif query.data == "win":
    await query.message.edit_text(text="okay have tu ek kaam kar")
    keyboard = ([[KeyboardButton("/makebanner")]])
